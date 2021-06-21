@@ -1,0 +1,12 @@
+{
+  "name": "form-canvas",
+  "version": "1.0.0",
+  "description": "This is form to create canvas account",
+  "main": "index.js",
+  "repository": "https://github.com/nguyen-tich-duy/form-canvas.git",
+  "author": "nguyentichduy",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
