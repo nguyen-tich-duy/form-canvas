@@ -87,35 +87,32 @@ router.post(
                 "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
             },
           }),
-          // axios({
-          //   method: "post",
-          //   url:
-          //     "https://beta.lms.flexidata.vn/api/v1/users/" +
-          //     res.data.id +
-          //     "/custom_data",
-          //   data: {
-          //     ns: "beta.lms.flexidata.vn",
-          //     data: {
-          //       job: req.body.jobs,
-          //       gender: req.body.gender,
-          //       phone: req.body.phone,
-          //       provide: req.body.provide,
-          //       hometown: req.body.hometown,
-          //     },
-          //   },
-          //   headers: {
-          //     Authorization:
-          //       "Bearer " +
-          //       "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
-          //     Accept: "application/json",
-          //   },
-          // }),
+          axios({
+            method: "put",
+            url: `https://beta.lms.flexidata.vn/api/v1/users/${response.data.id}/custom_data`,
+            data: {
+              ns: "beta.lms.flexidata.vn",
+              data: {
+                job: req.body.jobs,
+                gender: req.body.gender,
+                phone: req.body.phone,
+                provide: req.body.provide,
+                hometown: req.body.hometown,
+              },
+            },
+            headers: {
+              Authorization:
+                "Bearer CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }),
         ])
           .then(() => {
             res.redirect("https://beta.lms.flexidata.vn");
           })
           .catch((error) => {
-            console.log(error);
+            console.log(error.response);
           });
       })
       .catch(function (error) {
