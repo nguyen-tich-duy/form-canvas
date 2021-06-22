@@ -1,7 +1,15 @@
 $(".datepicker").each(function () {
   new Pikaday({ field: this });
 });
-
+$("[name='password-repeat']").on("change", () => {
+  $("[name='password-repeat']")
+    .get(0)
+    .setCustomValidity(
+      $("[name='password-repeat']").val() != $("[name='password']").val()
+        ? true
+        : ""
+    );
+});
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   "use strict";
@@ -18,7 +26,6 @@ $(".datepicker").each(function () {
           event.preventDefault();
           event.stopPropagation();
         }
-
         form.classList.add("was-validated");
       },
       false

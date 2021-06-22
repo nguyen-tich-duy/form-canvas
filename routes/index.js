@@ -109,22 +109,6 @@ router.post(
           }),
         ])
           .then(() => {
-            // axios({
-            //   method: "post",
-            //   url: "https://beta.lms.flexidata.vn/login/canvas",
-            //   data: {
-            //     authenticity_token:
-            //       "Fh7vR5upR7h5GxLbHCUtIVjgLHWOI+3vdjxljpoHpjtDU5x1qtFz3zBuWe96Y2RDNKZ7G/xwvIAPcQG98TeQCA==",
-            //     "pseudonym_session[unique_id]": "canvas@classcom.app",
-            //     "pseudonym_session[password]": "Flexidata1234",
-            //     redirect_to_ssl: 1,
-            //   },
-            // })
-            //   .then((res) => {
-            //   })
-            //   .catch((errors) => {
-            //     console.log(errors);
-            //   });
             res.redirect("https://beta.lms.flexidata.vn");
           })
           .catch((error) => {
@@ -134,9 +118,6 @@ router.post(
       .catch(function (error) {
         console.log(error);
       });
-    // res.redirect(
-    //   "https://testing-library.com/docs/react-testing-library/example-intro"
-    // );
   }
 );
 module.exports = router;
