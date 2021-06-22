@@ -25,7 +25,7 @@
           <section class="register-photo">
             <div class="form-container">
               <div class="image-holder"></div>
-              <form method="post">
+              <form method="post" class="needs-validation validate-form" novalidate>
                 <h2 class="text-center" style="font-family: Roboto, sans-serif;margin: 0px 0px 30px 0px;">ĐĂNG KÝ TÀI
                   KHOẢN<br></h2>
                 <p><em>Các ô có dấu&nbsp;</em>
@@ -38,6 +38,9 @@
                     <span style="color: var(--red);">*</span>
                   </label>
                   <input class="form-control" type="text" placeholder="ví dụ: Nguyễn Văn A" name="name" required>
+                  <div class="invalid-feedback">
+                    Vui lòng điền họ và tên của bạn
+                  </div>
                 </div>
                 <label style="padding: 0px 0px 0px 10px;margin: 10px 0px 0px 0px;">
                   <strong>Số điện thoại&nbsp;
@@ -45,10 +48,13 @@
                   <span style="color: var(--red);">*</span>
                 </label>
                 <div class="form-group">
-                  <input class="form-control" type="text" name="phone" placeholder="Ví dụ: 0903214245">
+                  <input class="form-control" type="text" name="phone" placeholder="Ví dụ: 0903214245" required>
+                  <div class="invalid-feedback">
+                    Vui lòng điền số điện thoại bao gồm số và không có khoảng trắng
+                  </div>
                 </div>
-                <p style="margin: -15px 0px 0px 15px;font-size: 10px;">*chỉ bao gồm số và không có khoảng trắng
-                </p>
+                <!-- <p style="margin: -15px 0px 0px 15px;font-size: 10px;">*chỉ bao gồm số và không có khoảng trắng
+                </p> -->
                 <div class="form-group">
                   <label style="padding: 0px 0px 0px 10px;margin: 10px 0px 0px 0px;">
                     <strong>Email</strong>
@@ -141,10 +147,13 @@
                 </div>
                 <div class="form-group">
                   <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" name="check-term">Tôi đồng ý với các điều
-                      khoản bảo mật
-                      thông tin</label>
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Tôi đồng ý với các điều khoản bảo mật thông tin
+                    </label>
+                    <div class="invalid-feedback">
+                      Bạn phải đồng ý để tiếp tục
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
