@@ -3,6 +3,7 @@ var axios = require("axios");
 const { body, validationResult, checkSchema } = require("express-validator");
 
 var router = express.Router();
+
 const registrationSchema = {
   name: {
     notEmpty: true,
@@ -59,29 +60,70 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     // Handle the request
-    axios
-      .post("https://beta.lms.flexidata.vn/api/v1/accounts/1/users", {
-        params: {
-          "pseudonym[password]": "123456789",
-          "pseudonym[unique_id]": "duy.nguyen1234@classcom.app",
-          "pseudonym[short_name]": "duy",
-          "pseudonym[name]": "nguyentichduy",
-        },
-        headers: {
-          Authorization:
-            "Bearer " +
-            "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
-        },
-      })
-      .then((res) => {
-        res.status(200).json({
-          success: true,
-          message: "Registration successful",
-        });
+    axios({
+      method: "post",
+      url:
+        "https://beta.lms.flexidata.vn/api/v1/accounts/1/users?pseudonym[password]=" +
+        req.body.password +
+        "&pseudonym[unique_id]=" +
+        req.body.email +
+        "&user[name]=" +
+        req.body.name,
+      data: {},
+      headers: {
+        Authorization:
+          "Bearer " +
+          "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+      },
+    })
+      .then((response) => {
+        Promise.all([
+          axios({
+            method: "post",
+            url: `https://beta.lms.flexidata.vn/api/v1/courses/1/enrollments?enrollment[user_id]=${response.data.id}&enrollment[type]=StudentEnrollment&enrollment[enrollment_state]=active`,
+            headers: {
+              Authorization:
+                "Bearer " +
+                "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+            },
+          }),
+          // axios({
+          //   method: "post",
+          //   url:
+          //     "https://beta.lms.flexidata.vn/api/v1/users/" +
+          //     res.data.id +
+          //     "/custom_data",
+          //   data: {
+          //     ns: "beta.lms.flexidata.vn",
+          //     data: {
+          //       job: req.body.jobs,
+          //       gender: req.body.gender,
+          //       phone: req.body.phone,
+          //       provide: req.body.provide,
+          //       hometown: req.body.hometown,
+          //     },
+          //   },
+          //   headers: {
+          //     Authorization:
+          //       "Bearer " +
+          //       "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+          //     Accept: "application/json",
+          //   },
+          // }),
+        ])
+          .then(() => {
+            res.redirect("https://beta.lms.flexidata.vn");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch(function (error) {
         console.log(error);
       });
+    // res.redirect(
+    //   "https://testing-library.com/docs/react-testing-library/example-intro"
+    // );
   }
 );
 module.exports = router;

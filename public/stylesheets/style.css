@@ -56,6 +56,7 @@
   text-shadow: none;
   outline: 0 !important;
 }
+
 .register-photo form .btn-primary:active,
 .register-photo form .btn-primary:hover {
   background: #eb3b60;
