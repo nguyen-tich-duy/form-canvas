@@ -1,0 +1,330 @@
+@media (max-width: 550px) {
+    #intro-images {
+        display: none;
+    }
+}
+
+.border--round {
+    border-radius: 6px;
+}
+
+.border--round:before {
+    border-radius: 6px;
+}
+
+.border--round .background-image-holder {
+    border-radius: 6px;
+}
+
+.border--round [data-scrim-top]:before,
+.border--round [data-scrim-bottom]:before,
+.border--round [data-overlay]:before {
+    border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+    .cover .triptych {
+        margin-top: 5.42857143em;
+    }
+}
+
+.triptych.border--round a:nth-child(2) img {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    z-index: 2;
+    box-shadow: 0 23px 40px rgba(0, 0, 0, 0.2);
+}
+
+.triptych.border--round img {
+    position: relative;
+    border-radius: 6px;
+    width: 33.333333%;
+    float: left;
+    margin: 0;
+}
+
+.triptych.border--round img:nth-child(2) {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    z-index: 2;
+    box-shadow: 0 23px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cover .triptych {
+    margin-top: 3.71428571em;
+}
+
+@media all and (min-width: 768px) {
+    .cover .triptych {
+        margin-top: 7.42857143em;
+    }
+}
+
+/*---------------------------------------------------*/
+
+/* ----------------HEADER------------------- */
+.custom-header {
+}
+
+.custom-bottom-banner {
+    height: 300px;
+}
+
+.custom-detail-course-header {
+    height: 60vh;
+    background-image: url(../img/gallery/banner-khoa-hoc-chi-tiet.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-header-title {
+    width: 60vw;
+}
+
+.partner-image {
+    height: 150px;
+}
+
+.categories-image{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+    filter: grayscale(0.8) opacity(0.8);
+}
+
+.categories-image_active{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.custom-title-bar {
+    background-color: rgba(140, 140, 140, 0.55);
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.can-active {
+    background-color: rgba(19, 75, 202, 0.88);
+}
+
+.custom-bottom-section {
+    background-color: #F3F7FE;
+}
+
+.custom-card {
+    min-height: 150px;
+    padding: 10px;
+}
+
+.custom-background-number {
+    background-color: #F2F6FD;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 576px) {
+    .custom-card {
+        text-align: center;
+    }
+    .dot-container {
+        display: none;
+    }
+}
+
+.background-image-test {
+    position: fixed;
+    top: 0;
+    opacity: 0.8;
+    background-image: url(../img/about.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ----------------------SLIDE------------------------------- */
+* {
+    box-sizing: border-box
+}
+
+/* thiết lập style cho slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+/* ẩn hình ảnh cho phần tử slideshow */
+.mySlides {
+    display: none;
+}
+
+/* thiết kế nút mũi tên*/
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* thiết kế nút mũi tên next nằm phía bên phải */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* hiệu ứng thay đổi background khi hover vào nút mũi tên*/
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.img-banner {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover
+}
+
+/* Thiết lập style cho nội dung của mỗi phần tử slideshow */
+/* Thiết lập style cho số hiển thị của phần tử */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* thiết lập style  nút tròn điều khiển*/
+.dot-container {
+    text-align:center;
+    margin-top: -115px;
+    position: relative;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+    background-color: #717171;
+}
+
+.banner-content {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: justify;
+}
+
+/* tạo hiệu ứng chuyển động fade */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.image-container {
+    width: 100%;
+    height: 170px;
+    pointer-events: none;
+}
+
+.custom-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.icon-container {
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-icon {
+    width: 100%;
+    object-fit: contain
+}
+
+/* ---------- MODAL ---------*/
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.custom-modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #3c3c3c;
+    width: 60%;
+}
+
+/* The Close Button */
+.custom-modal-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.custom-modal-close:hover,
+.custom-modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

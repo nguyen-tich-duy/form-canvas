@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    Document Title-->
+    <title>IOM website | demo website</title>
+    <!--    Favicons-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--    Stylesheets-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="./assets/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <!--    Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <!--    Bootstrap 4-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--    Fontawesome 5-->
+    <script src="https://kit.fontawesome.com/13de33b604.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="main" id="top">
+        <!----------------------navbar-------------------------->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/icons/logo.png" alt="logo IOM" width="120" />
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/gallery/microsoft.png" alt="logo IOM" width="120" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/course">Khóa học</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">Về chúng tôi</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex py-3 py-lg-0">
+                        <button class="btn btn-outline-primary py-2 mx-2" type="button" name="login">Đăng nhập</a>
+                        </button>
+                        <button class="btn btn-primary py-2" id="myBtn">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="myModal" class="custom-modal">
+
+            <!-- Modal content -->
+            <div class="custom-modal-content">
+                <span class="custom-modal-close">&times;</span>
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" style="width: 100%; height: 700px;" src="/signin"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+        <section class="pt-8 pb-0">
+            <div class="container">
+                <div class="slideshow-container">
+                    <!-- Kết hợp hình ảnh và nội dung cho mội phần tử trong slideshow-->
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 4</div>
+                        <img alt="" src="assets/img/gallery/slide1.jpg" class="img-banner">
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 4</div>
+                        <img alt="" src="assets/img/gallery/slide2.jpg" class="img-banner">
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 4</div>
+                        <img alt="" src="assets/img/gallery/slide3.jpg" class="img-banner">
+                    </div>
+
+                    <!-- Nút điều khiển mũi tên-->
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <br>
+                <!-- Nút tròn điều khiển slideshow-->
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+        <!----------------------Muc tieu va su menh-------------------------->
+        <section class="py-7 bg-theme">
+            <div class="container">
+                <h2 class="text-center fw-bold">Mục tiêu và sứ mệnh</h2>
+                <div class="text-justify">Tổ chức Di cư Quốc tế (IOM) và các tổ chức khác cam kết cùng chung tay với
+                    Chính
+                    phủ Việt Nam thực hiện những nỗ lực nhằm phát triển kỹ năng số cho thanh niên và lao động di cư
+                    trong
+                    nước. Thông qua dự án, cơ hội tiếp cận giáo dục trực tuyến của người Việt Nam sẽ được nâng cao, từ
+                    đó
+                    thúc đẩy năng suất lao động, tăng khả năng cạnh tranh lao động với các quốc gia khác trong khu vực.
+                    Hướng tới sự phát triển bền vững và bao trùm ở Việt Nam.
+                </div>
+            </div>
+        </section>
+        <!----------------------Du an duoc thanh lap boi-------------------------->
+        <section class="py-7">
+            <div class="container">
+                <h2 class="text-center fw-bold">Dự án được thành lập bởi</h2>
+                <div class="row mt-3">
+                    <div class="col-md-4 col-sm-12 d-flex flex-column">
+                        <div class="image-container">
+                            <img alt="" src="assets/img/gallery/tong-cuc-day-nghe.jpg" class="custom-image">
+                        </div>
+                        <div class="text-justify">
+                            Tổng cục Giáo dục nghề nghiệp là tổ chức thuộc Bộ Lao động - Thương binh và Xã hội, thực
+                            hiện
+                            chức năng tham mưu, giúp Bộ trưởng Bộ Lao động - Thương binh và Xã hội quản lý nhà nước và
+                            tổ
+                            chức thực thi pháp luật về giáo dục nghề nghiệp (trừ sư phạm) trong phạm vi cả nước; quản
+                            lý,
+                            thực hiện các dịch vụ công về giáo dục nghề nghiệp thuộc thẩm quyền theo quy định của pháp
+                            luật.
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 d-flex flex-column">
+                        <div class="image-container">
+                            <img alt="" src="assets/img/logo.png" class="custom-image">
+                        </div>
+                        <div class="text-justify">
+                            Thành lập vào năm 1951, IOM là tổ chức liên chính phủ dẫn đầu trong lĩnh vực di cư. IOM hoạt
+                            động chặt chẽ với các đối tác chính phủ, liên chính phủ và phi chính phủtrên toàn cầu. IOM
+                            tận
+                            tâm giúp đỡ các chính phủ và người di cư trong việc thúc đẩy di cư nhân đạo và trật tự.
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 d-flex flex-column">
+                        <div class="image-container">
+                            <img alt="" src="assets/img/gallery/microsoft.png" class="custom-image">
+                        </div>
+                        <div class="text-justify">
+                            Tổ chức Di cư Quốc tế (IOM) và các tổ chức khác cam kết cùng chung tay với Chính phủ Việt
+                            Nam
+                            thực hiện những nỗ lực nhằm phát triển kỹ năng số cho thanh niên và lao động di cư trong
+                            nước.
+                            Thông qua dự án, cơ hội tiếp cận giáo dục trực tuyến của người Việt Nam sẽ được nâng cao, từ
+                            đó
+                            thúc đẩy năng suất lao động, tăng khả năng cạnh tranh lao động với các quốc gia khác trong
+                            khu
+                            vực. Hướng tới sự phát triển bền vững và bao trùm ở Việt Nam.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------To chuc doi tac-------------------------->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold">Tổ chức đối tác</h2>
+                <div class="carousel slide mt-5" id="carouselLogo" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <div class="row h-100">
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/btl.png" class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-co-gioi-va-thuy-loi.jpg"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-cong-nghe-cao-dong-nai.png"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-kinh-te-hcm.png"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="row h-100">
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-kinh-te-ky-thuat-hcm.png"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-ky-nghe.png"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-ky-thuat-dong-nai.jpg"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-nghe-hcm.jpg"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <div class="row h-100">
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-nghe-viet-nam-singapore.jpg"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-viet-nam-han-quoc.png"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div class="image-container">
+                                        <img alt="" src="assets/img/partnerLogo/cao-dang-y-te-binh-duong.jpg"
+                                            class="custom-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row px-3 px-md-0 mt-4">
+                        <div class="col-6 position-relative">
+                            <ol class="carousel-indicators">
+                                <li class="active" data-bs-target="#carouselLogo" data-bs-slide-to="0"></li>
+                                <li data-bs-target="#carouselLogo" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carouselLogo" data-bs-slide-to="2"></li>
+                            </ol>
+                        </div>
+                        <div class="col-6 position-relative">
+                            <a class="carousel-control-prev carousel-icon z-index-2" href="#carouselLogo" role="button"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next carousel-icon z-index-2" href="#carouselLogo" role="button"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------Cac to chuc noi gi ve chung toi-------------------------->
+        <section class="py-7">
+            <div class="container">
+                <h1 class="fw-bold">Các tổ chức nói gì<br />về chúng tôi</h1>
+                <div class="row h-100 mt-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <img class="img-fluid" src="assets/img/gallery/user-1.png" alt="" />
+                                        <div class="flex-1 ms-3">
+                                            <h6 class="mb-0 fs--1 text-1000 fw-medium">Ông Huy Trần</h6>
+                                            <p class="fs--2 fw-normal mb-0">Giám đốc Điều hành, Flexidata</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text pt-3">"Đứng vai trò là một doanh nghiệp, một nhà tuyển dụng,
+                                    Flexidata
+                                    đánh giá cao tính thực tiễn của dự án đối với cộng đồng. Các khoá học trên nền tảng
+                                    này
+                                    đều là những nguồn tài nguyên hữu ích, giúp người học trau dồi các kỹ năng cần thiết
+                                    để
+                                    dễ dàng xin việc làm tại các doanh nghiệp. Flexidata tin rằng dự án sẽ là cầu nối
+                                    kết
+                                    nối người học đang-cần-việc với những doanh nghiệp đang-cần-người."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center"><img class="img-fluid"
+                                            src="assets/img/gallery/user-2.png" alt="" />
+                                        <div class="flex-1 ms-3">
+                                            <h6 class="mb-0 fs--1 text-1000 fw-medium">Ông Phạm Vũ Quốc Bình</h6>
+                                            <p class="fs--2 fw-normal mb-0">Phó Tổng cục trưởng Tổng cục GDNN/BLĐTBXH
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text pt-3">"Chúng tôi nhận thức rất rõ tầm quan trọng của vấn đề chuyển
+                                    đổi
+                                    số trong giáo dục nghề nghiệp thời gian tới và đang từng bước chuẩn bị cho quá trình
+                                    đó.
+                                    Tuy nhiên, đây là một lĩnh vực khá mới mẻ và khó khăn, đặc biệt với lĩnh vực giáo
+                                    dục
+                                    nghề nghiệp. Do đó, chúng tôi cần có sự đồng hành, chia sẻ của các đối tác quốc tế,
+                                    các
+                                    tập đoàn về công nghệ để gấp rút hoàn thiện khung pháp lý, chính sách và thúc đẩy
+                                    triển
+                                    khai các hoạt động nâng cao năng lực và ứng dụng chuyển đổi số trong toàn hệ thống
+                                    giáo
+                                    dục nghề nghiệp, từ cấp quản lý đến các cơ sở giáo dục nghề nghiệp."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center"><img class="img-fluid"
+                                            src="assets/img/gallery/user-3.png" alt="" />
+                                        <div class="flex-1 ms-3">
+                                            <h6 class="mb-0 fs--1 text-1000 fw-medium">Ông Nguyễn Hữu Khánh Linh</h6>
+                                            <p class="fs--2 fw-normal mb-0">Sở Lao động, Thương binh và Xã hội tỉnh Đồng
+                                                Nai</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text pt-3">"Thực hiện chuyển đổi số đem lại những cơ hội nhưng cũng rất
+                                    nhiều
+                                    thách thức cho đội ngũ triển khai tại cấp Sở, Phòng và Trường Cao đẳng. Việc chuyển
+                                    đổi
+                                    từ phương pháp quản lý, dạy và học truyền thống sang những phương pháp mới sử dụng
+                                    những
+                                    công nghệ mới sẽ vấp phải những khó khăn. Nhưng tôi tin rằng, việc tham gia thí điểm
+                                    vào
+                                    dự án này sẽ là bước đầu giúp chúng tôi, và các thầy trò dần làm quen với phương
+                                    pháp sư
+                                    phạm mới."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!----------------------Footer-------------------------->
+        <footer class="footer bg-200 py-6 border-top">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-6 mb-5 mb-lg-0 text-black">
+                        <p class="text-uppercase fw-bold">Văn phòng dự án <a href="#!">kynangnghenghiep.com</a></p>
+                        <p class="mb-0">
+                            Tầng 4, Tòa nhà xanh Một LHQ (GOUNH),
+                            <br />
+                            304 Phố Kim Mã, phường Ngọc Khánh,
+                            <br />
+                            Quận Ba Đình, Hà Nội
+                        </p>
+                        <p class="mb-0">Email: hanoi@iom.int</p>
+                    </div>
+                    <!-- Col 2-->
+                    <div class="col-lg-3 mb-5 text-black">
+                        <p class="text-uppercase mb-4 fw-bold">IOM Website</p>
+                        <div>
+                            <a class="text-decoration-none text-black" href="./course">
+                                Danh sách khóa học
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none text-black" href="/courseDetail">
+                                Khoá Microsoft Digital Literacy
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none text-black" href="./about">
+                                Về chúng tôi
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-3 mb-5 mb-lg-0 text-black">
+                        <p class="text-uppercase mb-4 fw-bold">Liên hệ</p>
+                        <div class="d-flex">
+                            <div class="list-inline-item bg-300 rounded-pill">
+                                <a class="text-decoration-none" href="https://www.facebook.com/iom.vietnam/">
+                                    <svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" fill="#0E1828" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!--    JavaScripts-->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <script>
+        var slider = document.getElementById('logo-slider'),
+            sliderItems = document.getElementById('logo-slides'),
+            prev = document.getElementById('logo-prev'),
+            next = document.getElementById('logo-next');
+
+        function slide(wrapper, items, prev, next) {
+            var posX1 = 0,
+                posX2 = 0,
+                posInitial,
+                posFinal,
+                threshold = 100,
+                slides = items.getElementsByClassName('logo-slide'),
+                slidesLength = slides.length,
+                slideSize = items.getElementsByClassName('logo-slide')[0].offsetWidth,
+                firstSlide = slides[0],
+                lastSlide = slides[slidesLength - 1],
+                cloneFirst = firstSlide.cloneNode(true),
+                cloneLast = lastSlide.cloneNode(true),
+                index = 0,
+                allowShift = true;
+
+            // Clone first and last slide
+            items.appendChild(cloneFirst);
+            items.insertBefore(cloneLast, firstSlide);
+            wrapper.classList.add('loaded');
+
+            // Mouse events
+            items.onmousedown = dragStart;
+
+            // Touch events
+            items.addEventListener('touchstart', dragStart);
+            items.addEventListener('touchend', dragEnd);
+            items.addEventListener('touchmove', dragAction);
+
+            // Click events
+            prev.addEventListener('click', function () {
+                shiftSlide(-1)
+            });
+            next.addEventListener('click', function () {
+                shiftSlide(1)
+            });
+
+            // Transition events
+            items.addEventListener('transitionend', checkIndex);
+
+            function dragStart(e) {
+                e = e || window.event;
+                e.preventDefault();
+                posInitial = items.offsetLeft;
+
+                if (e.type == 'touchstart') {
+                    posX1 = e.touches[0].clientX;
+                } else {
+                    posX1 = e.clientX;
+                    document.onmouseup = dragEnd;
+                    document.onmousemove = dragAction;
+                }
+            }
+
+            function dragAction(e) {
+                e = e || window.event;
+
+                if (e.type == 'touchmove') {
+                    posX2 = posX1 - e.touches[0].clientX;
+                    posX1 = e.touches[0].clientX;
+                } else {
+                    posX2 = posX1 - e.clientX;
+                    posX1 = e.clientX;
+                }
+                items.style.left = (items.offsetLeft - posX2) + "px";
+            }
+
+            function dragEnd(e) {
+                posFinal = items.offsetLeft;
+                if (posFinal - posInitial < -threshold) {
+                    shiftSlide(1, 'drag');
+                } else if (posFinal - posInitial > threshold) {
+                    shiftSlide(-1, 'drag');
+                } else {
+                    items.style.left = (posInitial) + "px";
+                }
+
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+
+            function shiftSlide(dir, action) {
+                items.classList.add('shifting');
+
+                if (allowShift) {
+                    if (!action) {
+                        posInitial = items.offsetLeft;
+                    }
+
+                    if (dir == 1) {
+                        items.style.left = (posInitial - slideSize) + "px";
+                        index++;
+                    } else if (dir == -1) {
+                        items.style.left = (posInitial + slideSize) + "px";
+                        index--;
+                    }
+                }
+                ;
+
+                allowShift = false;
+            }
+
+            function checkIndex() {
+                items.classList.remove('shifting');
+
+                if (index == -1) {
+                    items.style.left = -(slidesLength * slideSize) + "px";
+                    index = slidesLength - 1;
+                }
+
+                if (index == slidesLength) {
+                    items.style.left = -(1 * slideSize) + "px";
+                    index = 0;
+                }
+
+                allowShift = true;
+            }
+        }
+
+        slide(slider, sliderItems, prev, next);
+    </script>
+    <script>
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("custom-modal-close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    Document Title-->
+    <title>IOM website | demo website</title>
+    <!--    Favicons-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--    Stylesheets-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="./assets/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <!--    Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <!--    Bootstrap 4-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--    Fontawesome 5-->
+    <script src="https://kit.fontawesome.com/13de33b604.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="main" id="top">
+        <!----------------------navbar-------------------------->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/icons/logo.png" alt="logo IOM" width="120" />
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/gallery/microsoft.png" alt="logo IOM" width="120" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/course">Khóa học</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">Về chúng tôi</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex py-3 py-lg-0">
+                        <button class="btn btn-outline-primary py-2 mx-2" name="login" type="button">
+                            Đăng nhập
+                        </button>
+                        <button class="btn btn-primary py-2 myBtn">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="myModal" class="custom-modal">
+
+            <!-- Modal content -->
+            <div class="custom-modal-content">
+                <span class="custom-modal-close">&times;</span>
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" style="width: 100%; height: 700px;" src="/signin"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+        <!----------------------header-------------------------->
+        <section class="pt-8 pb-0">
+            <div class="container">
+                <div class="row custom-detail-course-header">
+                    <div class="col-12 background-overlay d-flex align-items-end">
+                        <div>
+                            <h1 class="fw-medium">Nâng cao kỹ năng tin học (Digital Literracy)</h1>
+                            <p class="mt-3 mb-4">Những kiến thức cơ bản để giúp bạn bắt đầu làm việc hiệu quả với máy
+                                tính</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------Giới thiệu khóa học-------------------------->
+        <section class="py-6">
+            <div class="container">
+                <h4 class="fw-bold">Giới thiệu khóa học</h4>
+                <span>Khóa học Kỹ năng số giúp người học nắm vững những khái niệm và kỹ năng cơ bản để sử dụng máy tính.
+                    Nội dung của khóa tập trung vào những ứng dụng thiết thực của máy tính trong đời sống thường ngày,
+                    có thể giúp người học cải thiện đời sống kinh tế trong trạng thái bình thường mới của xã hội.
+                </span>
+                <div class="row mt-5 py-5 px-3 border rounded justify-content-center align-items-center">
+                    <h4 class="fw-bold">Mục tiêu khóa học</h4>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="d-flex align-items-center mt-3">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Sử dụng máy tính căn bản</span>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Sử dụng Internet hiệu quả</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="d-flex align-items-center mt-3">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Sử dụng hộp thư điện tử (email)</span>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Cách sử dụng Internet an toàn</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="d-flex align-items-center mt-3">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Tạo nội dung số</span>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Quản lý nội dung số</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------Noi dung-------------------------->
+        <section class="py-6">
+            <div class="container">
+                <h4 class="fw-bold">Nội dung khóa học</h4>
+                <div class="detail-course-grid-container">
+                    <div class="custom-card border rounded row d-flex align-items-center justify-content-center">
+                        <div class="col-md-2 d-flex flex-column align-items-center justify-content-center">
+                            <div class="custom-background-number bg-theme rounded-3">
+                                <div class="list-inline-item bg-blue rounded-pill text-white fw-bold">1</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 d-flex flex-column justify-content-center">
+                            <span><i class="far fa-clock"></i>&nbsp;&nbsp;Học trong 1 giờ 09 phút</span>
+                            <span class="fw-bold">Tương tác với máy tính</span>
+                            <span>Hướng dẫn các khái niệm căn bản về các bộ phận cơ bản của máy tính và cách sử
+                                dụng máy tính hiệu quả</span>
+                        </div>
+                    </div>
+                    <div class="custom-card border rounded row d-flex align-items-center justify-content-center">
+                        <div class="col-md-2 d-flex flex-column align-items-center justify-content-center">
+                            <div class="custom-background-number bg-theme rounded-3">
+                                <div class="list-inline-item bg-blue rounded-pill text-white fw-bold">2</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 d-flex flex-column justify-content-center">
+                            <span><i class="far fa-clock"></i>&nbsp;&nbsp;Học trong 48 phút</span>
+                            <span class="fw-bold">Truy cập thông tin trực tuyến </span>
+                            <span>Hướng dẫn các khái niệm căn bản nhưng quan trọng về internet</span>
+                        </div>
+                    </div>
+                    <div class="custom-card border rounded row d-flex align-items-center justify-content-center">
+                        <div class="col-md-2 d-flex flex-column align-items-center justify-content-center">
+                            <div class="custom-background-number bg-theme rounded-3">
+                                <div class="list-inline-item bg-blue rounded-pill text-white fw-bold">3</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 d-flex flex-column justify-content-center">
+                            <span><i class="far fa-clock"></i>&nbsp;&nbsp;Học trong 33 phút</span>
+                            <span class="fw-bold">Giao tiếp trực tuyến</span>
+                            <span>Hướng dẫn sử dụng, trao đổi thông tin thông qua hộp thư điện tử (email)</span>
+                        </div>
+                    </div>
+                    <div class="custom-card border rounded row d-flex align-items-center justify-content-center">
+                        <div class="col-md-2 d-flex flex-column align-items-center justify-content-center">
+                            <div class="custom-background-number bg-theme rounded-3">
+                                <div class="list-inline-item bg-blue rounded-pill text-white fw-bold">4</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 d-flex flex-column justify-content-center">
+                            <span><i class="far fa-clock"></i>&nbsp;&nbsp;Học trong 26 phút</span>
+                            <span class="fw-bold">Tham gia trực tuyến an toàn và trách nhiệm</span>
+                            <span>Tìm hiểu về các hình thức lừa đảo qua mạng và cách bảo vệ bản thân trên không gian
+                                mạng</span>
+                        </div>
+                    </div>
+                    <div class="custom-card border rounded row d-flex align-items-center justify-content-center">
+                        <div class="col-md-2 d-flex flex-column align-items-center justify-content-center">
+                            <div class="custom-background-number bg-theme rounded-3">
+                                <div class="list-inline-item bg-blue rounded-pill text-white fw-bold">5</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 d-flex flex-column justify-content-center">
+                            <span><i class="far fa-clock"></i>&nbsp;&nbsp;Học trong 1 giờ 09 phút</span>
+                            <span class="fw-bold">Tạo nội dung số</span>
+                            <span>Hướng dẫn sử dụng các ứng dụng tạo nội dung trực tuyến như Office 365</span>
+                        </div>
+                    </div>
+                    <div class="custom-card border rounded row d-flex align-items-center justify-content-center">
+                        <div class="col-md-2 d-flex flex-column align-items-center justify-content-center">
+                            <div class="custom-background-number bg-theme rounded-3">
+                                <div class="list-inline-item bg-blue rounded-pill text-white fw-bold">6</div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 d-flex flex-column justify-content-center">
+                            <span><i class="far fa-clock"></i>&nbsp;&nbsp;Học trong 1 giờ 05 phút</span>
+                            <span class="fw-bold">Kết hợp và quản lý các nội dung số</span>
+                            <span>Hướng dẫn sử dụng các dịch vụ đám mây như OneDrive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------Chung nhan khoa hoc-------------------------->
+        <section class="py-6">
+            <div class="container">
+                <h4 class="fw-bold">Chứng nhận khóa học</h4>
+                <div class="row mt-4">
+                    <div class="col-md-8 col-sm-12 mb-4">
+                        <img alt="" src="assets/img/gallery/certificate.png" width="100%">
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <h4 class="fw-bold">Lợi ích của chứng nhận</h4>
+                        <div class="d-flex align-items-center mt-5">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Ngắn gọn dễ hiểu</span>
+                        </div>
+                        <div class="d-flex align-items-center mt-5">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Phương pháp sáng tạo</span>
+                        </div>
+                        <div class="d-flex align-items-center mt-5">
+                            <img alt="" src="assets/img/icons/control-check.svg">
+                            <span>&nbsp;&nbsp;Học mọi lúc mọi nơi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------banner bottom-------------------------->
+        <section class="py-6">
+            <div class="container">
+                <div class="row custom-bottom-banner bg-theme d-flex justify-content-center align-items-center">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <h1 class="fw-medium">Nhiều nội dung hữu ích đang chờ bạn tại khóa học</h1>
+                            <a class="btn btn-info py-2 mt-3 myBtn">Vào học ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------Cac khoa hoc lien quan-------------------------->
+        <section class="py-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="fw-bold m-3">Các khóa học liên quan</h4>
+                    </div>
+                </div>
+                <div class="carousel slide" id="carouselkhoahoc" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <div class="row h-100">
+                                <div class="col-md-4 px-md-2 px-lg-3">
+                                    <div class="card-body d-flex flex-column justify-content-between mx-auto">
+                                        <div>
+                                            <a href="/courseDetail">
+                                                <img class="img-fluid" src="assets/img/gallery/khoahoc1.jpg" alt="" />
+                                                <h5 class="mt-4 fw-bold">Kỹ năng số tin học cơ bản</h5>
+                                            </a>
+                                            <div>
+                                                <span>Khóa học bao gồm nhiều bài học nhỏ, với tổng thời lượng học khoảng
+                                                    5 tiếng. Mục tiêu giúp người học nắm vững những khái niệm và kỹ năng
+                                                    cơ bản để sử dụng máy tính</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-md-2 px-lg-3">
+                                    <div class="card-body d-flex flex-column justify-content-between mx-auto">
+                                        <div>
+                                            <img class="img-fluid" src="assets/img/gallery/khoahoc2.jpg" alt="" />
+                                            <h5 class="mt-4 fw-bold">Giới thiệu Python</h5>
+                                            <div>
+                                                <span>Python là một trong những ngôn ngữ lập trình phổ biến, được ứng
+                                                    dụng trong AI, dữ liệu lớn, phát triển website và nhiều hơn thế
+                                                    nữa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-md-2 px-lg-3">
+                                    <div class="card-body d-flex flex-column justify-content-between mx-auto">
+                                        <div>
+                                            <img class="img-fluid" src="assets/img/gallery/khoahoc3.jpg" alt="" />
+                                            <h5 class="mt-4 fw-bold">Data Analysis</h5>
+                                            <div>
+                                                <span>Phân tích dữ liệu đang là lĩnh vực nhận được nhiều sự quan tâm.
+                                                    Học ngay các kỹ năng cơ bản để nắm bắt các cơ hội làm việc trong
+                                                    lĩnh vực</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <div class="row h-100">
+                                <div class="col-md-4 px-md-2 px-lg-3">
+                                    <div class="card-body d-flex flex-column justify-content-between mx-auto">
+                                        <div>
+                                            <img class="img-fluid" src="assets/img/gallery/khoahoc4.jpg" alt="" />
+                                            <h5 class="mt-4 fw-bold">Website development</h5>
+                                            <div>
+                                                <span>Học các kỹ năng và quy trình phát triển một website cơ bản</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-md-2 px-lg-3">
+                                    <div class="card-body d-flex flex-column justify-content-between mx-auto">
+                                        <div>
+                                            <img class="img-fluid" src="assets/img/gallery/khoahoc5.jpg" alt="" />
+                                            <h5 class="mt-4 fw-bold">Minecraft Hour Of Code</h5>
+                                            <div>
+                                                <span>Làm quen với lập trình cơ bản qua trò chơi Minecraft</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-md-2 px-lg-3">
+                                    <div class="card-body d-flex flex-column justify-content-between mx-auto">
+                                        <div>
+                                            <img class="img-fluid" src="assets/img/gallery/khoahoc6.jpg" alt="" />
+                                            <h5 class="mt-4 fw-bold">Xây dựng tài khoản LinkedIn - Mạng xã hội cho tuyển
+                                                dụng</h5>
+                                            <div>
+                                                <span>Tạo tài khoản LinkedIn và tiếp cận các cơ hội việc làm quốc
+                                                    tế</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row px-3 px-md-0 mt-4">
+                        <div class="col-6 position-relative">
+                            <ol class="carousel-indicators">
+                                <li class="active" data-bs-target="#carouselkhoahoc" data-bs-slide-to="0"></li>
+                                <li data-bs-target="#carouselkhoahoc" data-bs-slide-to="1"></li>
+                            </ol>
+                        </div>
+                        <div class="col-6 position-relative">
+                            <a class="carousel-control-prev carousel-icon z-index-2" href="#carouselkhoahoc"
+                                role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next carousel-icon z-index-2" href="#carouselkhoahoc"
+                                role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----------------------Footer-------------------------->
+        <footer class="footer bg-200 py-6 border-top">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-6 mb-5 mb-lg-0 text-black">
+                        <p class="text-uppercase fw-bold">Văn phòng dự án <a href="#!">kynangnghenghiep.com</a></p>
+                        <p class="mb-0">
+                            Tầng 4, Tòa nhà xanh Một LHQ (GOUNH),
+                            <br />
+                            304 Phố Kim Mã, phường Ngọc Khánh,
+                            <br />
+                            Quận Ba Đình, Hà Nội
+                        </p>
+                        <p class="mb-0">Email: hanoi@iom.int</p>
+                    </div>
+                    <!-- Col 2-->
+                    <div class="col-lg-3 mb-5 text-black">
+                        <p class="text-uppercase mb-4 fw-bold">IOM Website</p>
+                        <div>
+                            <a class="text-decoration-none text-black" href="./course">
+                                Danh sách khóa học
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none text-black" href="/courseDetail">
+                                Khoá Microsoft Digital Literacy
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="text-decoration-none text-black" href="./about">
+                                Về chúng tôi
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-3 mb-5 mb-lg-0 text-black">
+                        <p class="text-uppercase mb-4 fw-bold">Liên hệ</p>
+                        <div class="d-flex">
+                            <div class="list-inline-item bg-300 rounded-pill">
+                                <a class="text-decoration-none" href="https://www.facebook.com/iom.vietnam/">
+                                    <svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" fill="#0E1828" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!--    JavaScripts-->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <script>
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.querySelectorAll(".myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("custom-modal-close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.forEach(element => {
+            element.onclick = function () {
+                modal.style.display = "block";
+            }
+        });
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

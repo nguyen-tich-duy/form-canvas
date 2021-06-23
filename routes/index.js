@@ -1,6 +1,7 @@
 var express = require("express");
 var axios = require("axios");
 const { body, validationResult, checkSchema } = require("express-validator");
+var path = require("path");
 
 var router = express.Router();
 
@@ -43,9 +44,20 @@ const registrationSchema = {
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Form canvas" });
 });
-
+router.get("/about", (req, res, next) => {
+  res.sendFile("About.html", { root: "./IOM-website" });
+});
+router.get("/course", (req, res, next) => {
+  res.sendFile("Course.html", { root: "./IOM-website" });
+});
+router.get("/courseDetail", (req, res, next) => {
+  res.sendFile("./DetailCourse.html", { root: "./IOM-website" });
+});
+router.get("/signin", (req, res, next) => {
+  res.sendFile("./resignter.html", { root: "./IOM-website" });
+});
 router.post(
-  "/",
+  "/signin",
   checkSchema(registrationSchema),
   body("password-repeat").custom((value, { req }) => {
     if (value !== req.body.password) {
@@ -109,7 +121,9 @@ router.post(
           }),
         ])
           .then(() => {
-            res.redirect("https://beta.lms.flexidata.vn");
+            res.end(
+              "<html><body><p>Redirecting...</p><script>window.top.location.href='https://beta.lms.flexidata.vn/'</script></body></html>"
+            );
           })
           .catch((error) => {
             console.log(error.response);
