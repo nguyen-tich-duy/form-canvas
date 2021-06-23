@@ -11,7 +11,7 @@ $("[name='password-repeat']").on("change", () => {
     );
 });
 $("[name='password']").on("change", () => {
-  const regex = new RegExp("^(?=.*[a-z])[0-9a-zA-Z!@#$%^&*]{8,}$");
+  const regex = new RegExp("^[0-9a-zA-Z!@#$%^&*]{4,}$");
   const passwordValue = $("[name='password']").val();
   const passwordConfirm = $("[name='password-repeat']").val();
   console.log(passwordValue, regex.test(passwordValue));
@@ -35,8 +35,10 @@ $("[name='email'").on("change", () => {
 $(".validate-form").ajaxForm({
   url: "/signin", // or whatever
   dataType: "json",
+  success: function (data) {
+    window.parent.location.href = data.redirect;
+  },
   error: (res) => {
-    console.log(res);
     $("[name='email']").get(0).setCustomValidity(true);
   },
 });

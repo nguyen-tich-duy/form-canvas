@@ -109,14 +109,14 @@ router.post(
           }),
         ])
           .then(() => {
-            res.redirect("https://beta.lms.flexidata.vn");
+            res.status(200).send({ redirect: "https://beta.lms.flexidata.vn" });
           })
           .catch((error) => {
             console.log(error.response);
           });
       })
       .catch(function (error) {
-        res.status(400).send({ error });
+        res.status(400).send({ name: "error" });
       });
   }
 );
