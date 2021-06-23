@@ -46,6 +46,7 @@ router.post(
   body("password-repeat").custom((value, { req }) => {
     if (value !== req.body.password) {
       throw new Error("Password confirmation does not match password");
+      // next(null, {error: "password fail"})
     }
     // Indicates the success of this synchronous custom validator
     return true;
@@ -53,7 +54,8 @@ router.post(
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      console.log("hasdfsd", errors);
+      return res.status(422).json({ errors: "id-duplicate" });
     }
     // Handle the request
     axios({
@@ -113,6 +115,7 @@ router.post(
           });
       })
       .catch(function (error) {
+        console.log(error);
         res.status(400).send({ name: "error" });
       });
   }
