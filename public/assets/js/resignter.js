@@ -11,7 +11,7 @@ $("[name='password-repeat']").on("change", () => {
     );
 });
 $("[name='password']").on("change", () => {
-  const regex = new RegExp("^[0-9a-zA-Z!@#$%^&*]{4,}$");
+  const regex = new RegExp("^[0-9a-zA-Z!@#$%^&*]{8,}$");
   const passwordValue = $("[name='password']").val();
   const passwordConfirm = $("[name='password-repeat']").val();
   console.log(passwordValue, regex.test(passwordValue));
@@ -22,20 +22,12 @@ $("[name='password']").on("change", () => {
     .get(0)
     .setCustomValidity(passwordConfirm != passwordValue ? true : "");
 });
-// function validateEmail(email) {
-//   const regex = new RegExp("^S+@S+.S+");
-//   return regex.test(email);
-// }
+
 function validatePhone(phone) {
   const regex = new RegExp("^[0-9]{6,15}$");
   return regex.test(phone);
 }
-// $("[name='email'").on("change", () => {
-//   var email = $("[name='email'").val();
-//   $("[name='email'")
-//     .get(0)
-//     .setCustomValidity(!validateEmail(email) ? true : "");
-// });
+
 $("[name='phone'").on("change", () => {
   var phone = $("[name='phone'").val();
   $("[name='phone'")

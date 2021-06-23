@@ -12,19 +12,17 @@ const registrationSchema = {
   },
   phone: {
     notEmpty: true,
-    isMobilePhone: true,
     errorMessage: "Số điện thoại không hợp lệ hoặc để trống",
   },
   email: {
     normalizeEmail: true,
   },
-  password: {
-    isStrongPassword: {
-      minLength: 4,
-    },
-    errorMessage:
-      "Password must be greater than 8 and contain at least one uppercase letter, one lowercase letter, and one number",
-  },
+  // password: {
+  //   // isStrongPassword: {
+  //   //   minLength: 4,
+  //   // },
+  //   errorMessage: "Mật khẩu không được ít hơn 4 kí tự",
+  // },
 };
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -66,7 +64,8 @@ router.post(
         "&pseudonym[unique_id]=" +
         req.body.phone +
         "&user[name]=" +
-        req.body.name,
+        req.body.name +
+        "&destination=https://beta.lms.flexidata.vn/courses/1",
       data: {},
       headers: {
         Authorization:
@@ -107,7 +106,7 @@ router.post(
           }),
         ])
           .then(() => {
-            res.status(200).send({ redirect: "https://beta.lms.flexidata.vn" });
+            res.status(200).send({ redirect: response.data.destination });
           })
           .catch((error) => {
             console.log(error.response);
