@@ -64,7 +64,7 @@ router.post(
         "https://beta.lms.flexidata.vn/api/v1/accounts/1/users?pseudonym[password]=" +
         req.body.password +
         "&pseudonym[unique_id]=" +
-        req.body.email +
+        req.body.phone +
         "&user[name]=" +
         req.body.name,
       data: {},
@@ -93,7 +93,7 @@ router.post(
               data: {
                 job: req.body.jobs,
                 gender: req.body.gender,
-                phone: req.body.phone,
+                email: req.body.email,
                 provide: req.body.provide,
                 hometown: req.body.hometown,
               },

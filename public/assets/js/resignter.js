@@ -22,15 +22,33 @@ $("[name='password']").on("change", () => {
     .get(0)
     .setCustomValidity(passwordConfirm != passwordValue ? true : "");
 });
-function validateEmail(email) {
-  const regex = new RegExp("^S+@S+$");
-  return regex.test(email);
+// function validateEmail(email) {
+//   const regex = new RegExp("^S+@S+.S+");
+//   return regex.test(email);
+// }
+function validatePhone(phone) {
+  const regex = new RegExp("^(84|0[1|3|5|7|8|9])+([0-9]{6,12})$");
+  return regex.test(phone);
 }
-$("[name='email'").on("change", () => {
-  var email = $("[name='email'").val();
-  $("[name='email'")
+// $("[name='email'").on("change", () => {
+//   var email = $("[name='email'").val();
+//   $("[name='email'")
+//     .get(0)
+//     .setCustomValidity(!validateEmail(email) ? true : "");
+// });
+$("[name='phone'").on("change", () => {
+  var phone = $("[name='phone'").val();
+  $("[name='phone'")
     .get(0)
-    .setCustomValidity(validateEmail(email) ? true : "");
+    .setCustomValidity(!validatePhone(phone) ? true : "");
+});
+$(".validate-form").on("submit", (e) => {
+  var phone = $("[name='phone'").val();
+  if (!validatePhone(phone)) {
+    e.preventDefault();
+    e.stopPropagation();
+    $("[name='phone'").get(0).setCustomValidity(true);
+  }
 });
 $(".validate-form").ajaxForm({
   url: "/signin", // or whatever
@@ -39,7 +57,7 @@ $(".validate-form").ajaxForm({
     window.parent.location.href = data.redirect;
   },
   error: (res) => {
-    $("[name='email']").get(0).setCustomValidity(true);
+    $("[name='phone']").get(0).setCustomValidity(true);
   },
 });
 
