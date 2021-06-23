@@ -23,6 +23,29 @@ $("[name='password']").on("change", () => {
         : ""
     );
 });
+function validateEmail(email) {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+$("[name='email'").on("change", () => {
+  var email = $("[name='email'").val();
+  console.log(email);
+  $("[name='email'")
+    .get(0)
+    .setCustomValidity(validateEmail(email) ? true : "");
+});
+$(".validate-form").ajaxForm({
+  url: "/resignter", // or whatever
+  dataType: "json",
+  success: (res) => {
+    $("[name='email']").get(0).setCustomValidity("");
+  },
+  error: (res) => {
+    $("[name='email']").get(0).setCustomValidity(true);
+  },
+});
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   "use strict";

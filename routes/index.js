@@ -45,16 +45,16 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Form canvas" });
 });
 router.get("/about", (req, res, next) => {
-  res.sendFile("About.html", { root: "./IOM-website" });
+  res.sendFile("About.html", { root: "./public" });
 });
 router.get("/course", (req, res, next) => {
-  res.sendFile("Course.html", { root: "./IOM-website" });
+  res.sendFile("Course.html", { root: "./public" });
 });
 router.get("/courseDetail", (req, res, next) => {
-  res.sendFile("./DetailCourse.html", { root: "./IOM-website" });
+  res.sendFile("./DetailCourse.html", { root: "./public" });
 });
 router.get("/signin", (req, res, next) => {
-  res.sendFile("./resignter.html", { root: "./IOM-website" });
+  res.sendFile("./resignter.html", { root: "./public" });
 });
 router.post(
   "/signin",
@@ -131,6 +131,8 @@ router.post(
       })
       .catch(function (error) {
         console.log(error);
+        // res.end("<script>console.log('hihi')</script>");
+        // res.status(400).send({ name: "hihi" });
       });
   }
 );
