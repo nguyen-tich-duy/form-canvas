@@ -27,7 +27,7 @@ $("[name='password']").on("change", () => {
 //   return regex.test(email);
 // }
 function validatePhone(phone) {
-  const regex = new RegExp("^(84|0[1|3|5|7|8|9])+([0-9]{6,12})$");
+  const regex = new RegExp("^(84|0[1|3|5|7|8|9])+([0-9]{6,15})$");
   return regex.test(phone);
 }
 // $("[name='email'").on("change", () => {
