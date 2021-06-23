@@ -17,23 +17,11 @@ const registrationSchema = {
   },
   email: {
     normalizeEmail: true,
-    // custom: {
-    //   options: (value) => {
-    //     return User.find({
-    //       email: value,
-    //     }).then((user) => {
-    //       if (user.length > 0) {
-    //         return Promise.reject("Email address already taken");
-    //       }
-    //     });
-    //   },
-    // },
   },
   password: {
     isStrongPassword: {
       minLength: 8,
       minLowercase: 1,
-      minUppercase: 1,
       minNumbers: 1,
     },
     errorMessage:
@@ -121,18 +109,14 @@ router.post(
           }),
         ])
           .then(() => {
-            res.end(
-              "<html><body><p>Redirecting...</p><script>window.top.location.href='https://beta.lms.flexidata.vn/'</script></body></html>"
-            );
+            res.redirect("https://beta.lms.flexidata.vn");
           })
           .catch((error) => {
             console.log(error.response);
           });
       })
       .catch(function (error) {
-        console.log(error);
-        // res.end("<script>console.log('hihi')</script>");
-        // res.status(400).send({ name: "hihi" });
+        res.status(400).send({ error });
       });
   }
 );

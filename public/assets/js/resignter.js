@@ -2,8 +2,6 @@ $(".datepicker").each(function () {
   new Pikaday({ field: this });
 });
 $("[name='password-repeat']").on("change", () => {
-  console.log($("[name='password-repeat']").val());
-  console.log($("[name='password']").val());
   $("[name='password-repeat']")
     .get(0)
     .setCustomValidity(
@@ -13,35 +11,32 @@ $("[name='password-repeat']").on("change", () => {
     );
 });
 $("[name='password']").on("change", () => {
-  console.log($("[name='password-repeat']").val());
-  console.log($("[name='password']").val());
+  const regex = new RegExp("^(?=.*[a-z])[0-9a-zA-Z!@#$%^&*]{8,}$");
+  const passwordValue = $("[name='password']").val();
+  const passwordConfirm = $("[name='password-repeat']").val();
+  console.log(passwordValue, regex.test(passwordValue));
+  $("[name='password']")
+    .get(0)
+    .setCustomValidity(!regex.test(passwordValue) ? true : "");
   $("[name='password-repeat']")
     .get(0)
-    .setCustomValidity(
-      $("[name='password-repeat']").val() != $("[name='password']").val()
-        ? true
-        : ""
-    );
+    .setCustomValidity(passwordConfirm != passwordValue ? true : "");
 });
 function validateEmail(email) {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
+  const regex = new RegExp("^S+@S+$");
+  return regex.test(email);
 }
 $("[name='email'").on("change", () => {
   var email = $("[name='email'").val();
-  console.log(email);
   $("[name='email'")
     .get(0)
     .setCustomValidity(validateEmail(email) ? true : "");
 });
 $(".validate-form").ajaxForm({
-  url: "/resignter", // or whatever
+  url: "/signin", // or whatever
   dataType: "json",
-  success: (res) => {
-    $("[name='email']").get(0).setCustomValidity("");
-  },
   error: (res) => {
+    console.log(res);
     $("[name='email']").get(0).setCustomValidity(true);
   },
 });
