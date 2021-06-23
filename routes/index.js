@@ -54,7 +54,6 @@ router.post(
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      console.log("hasdfsd", errors);
       return res.status(422).json({ errors: "id-duplicate" });
     }
     // Handle the request

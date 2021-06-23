@@ -49,7 +49,9 @@ $(".validate-form").ajaxForm({
   },
   error: (res) => {
     if (res.status === 400) {
-      $("[name='phone']").get(0).setCustomValidity("Số điện thoại đã bị trùng");
+      $("[name='phone']").get(0).setCustomValidity(true);
+    } else if (res.status === 422) {
+      $("[name='password-repeat']").get(0).setCustomValidity(true);
     }
   },
 });
@@ -65,9 +67,7 @@ $(".validate-form").ajaxForm({
     form.addEventListener(
       "submit",
       function (event) {
-        console.log("validate", form.checkValidity());
         if (!form.checkValidity()) {
-          console.log("isValidate");
           event.preventDefault();
           event.stopPropagation();
         }
