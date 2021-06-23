@@ -43,18 +43,20 @@ router.get("/signin", (req, res, next) => {
 router.post(
   "/signin",
   checkSchema(registrationSchema),
-  body("password-repeat").custom((value, { req }) => {
+  body("passwordConfirm").custom((value, { req }) => {
+    console.log(value);
     if (value !== req.body.password) {
       throw new Error("Password confirmation does not match password");
-      // next(null, {error: "password fail"})
     }
-    // Indicates the success of this synchronous custom validator
     return true;
   }),
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(422).json({ errors: "id-duplicate" });
+      return res.status(400).json({
+        errors: "Password confirmation",
+        message: "Password confirm don't match password",
+      });
     }
     // Handle the request
     axios({
@@ -115,7 +117,10 @@ router.post(
       })
       .catch(function (error) {
         console.log(error);
-        res.status(400).send({ name: "error" });
+        res.status(400).send({
+          error: "phone duplicate",
+          message: "Phone is exits in system",
+        });
       });
   }
 );

@@ -40,22 +40,20 @@ $("#register-form").on("submit", (e) => {
   if (!validatePhone(phone)) {
     $("[name='phone'").get(0).setCustomValidity(true);
   }
-  console.log("form.checkValidity()", form.checkValidity());
   if (form.checkValidity()) {
     const phone = $("[name='phone']").val();
     const name = $("[name='name']").val();
     const password = $("[name='password']").val();
-    console.log("{ phone, name, password }", { phone, name, password });
+    const passwordConfirm = $("[name='password-repeat']").val();
     $.ajax({
       type: "POST",
-      data: { phone, name, password, "password-repeat": password },
+      data: { phone, name, password, passwordConfirm },
       url: "/signin", // or whatever
       dataType: "json",
       success: function (data) {
         window.parent.location.href = data.redirect;
       },
       error: (error) => {
-        console.log(error);
         $("[name='phone']").get(0).setCustomValidity(true);
       },
     });
