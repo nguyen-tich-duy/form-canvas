@@ -38,7 +38,7 @@ router.get("/courseDetail", (req, res, next) => {
   res.sendFile("./DetailCourse.html", { root: "./public" });
 });
 router.get("/signin", (req, res, next) => {
-  res.sendFile("./resignter.html", { root: "./public" });
+  res.sendFile("./register.html", { root: "./public" });
 });
 router.post(
   "/signin",

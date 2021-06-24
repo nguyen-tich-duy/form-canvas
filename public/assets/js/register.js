@@ -1,6 +1,9 @@
 $(".datepicker").each(function () {
   new Pikaday({ field: this });
 });
+$("#hasAccount").on("click", () => {
+  window.parent.location.href = "https://beta.lms.flexidata.vn/login/canvas";
+});
 $("[name='password-repeat']").on("change", () => {
   $("[name='password-repeat']")
     .get(0)
