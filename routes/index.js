@@ -14,9 +14,9 @@ const registrationSchema = {
     notEmpty: true,
     errorMessage: "Số điện thoại không hợp lệ hoặc để trống",
   },
-  email: {
-    normalizeEmail: true,
-  },
+  // email: {
+  //   normalizeEmail: true,
+  // },
   // password: {
   //   // isStrongPassword: {
   //   //   minLength: 4,
