@@ -22,11 +22,16 @@ $("[name='password']").on("change", () => {
     .setCustomValidity(passwordConfirm != passwordValue ? true : "");
 });
 function validatePhone(phone) {
-  const regex = new RegExp("^[0-9]{6,15}$");
+  const regex = new RegExp("^[0-9]{1,20}$");
   return regex.test(phone);
 }
 $("[name='phone'").on("change", () => {
   var phone = $("[name='phone'").val();
+  if (!validatePhone(phone)) {
+    $("#validate-phone").html(
+      "Vui lòng điền số điện thoại bao gồm số và không có khoảng trắng"
+    );
+  }
   $("[name='phone'")
     .get(0)
     .setCustomValidity(!validatePhone(phone) ? true : "");
@@ -54,6 +59,9 @@ $("#register-form").on("submit", (e) => {
         window.parent.location.href = data.redirect;
       },
       error: (error) => {
+        console.log(error);
+        console.log(error.responseJSON.message);
+        $("#validate-phone").html(error.responseJSON.message);
         $("[name='phone']").get(0).setCustomValidity(true);
       },
     });

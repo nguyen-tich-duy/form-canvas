@@ -55,7 +55,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({
         errors: "Password confirmation",
-        message: "Password confirm don't match password",
+        message: "Mật khẩu xác nhận không chính xác",
       });
     }
     // Handle the request
@@ -119,7 +119,7 @@ router.post(
         console.log(error);
         res.status(400).send({
           error: "phone duplicate",
-          message: "Phone is exits in system",
+          message: "Số điện thoại đã tồn tại trong hệ thống",
         });
       });
   }
