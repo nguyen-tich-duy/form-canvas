@@ -32,7 +32,7 @@ $("[name='phone'").on("change", () => {
   var phone = $("[name='phone'").val();
   if (!validatePhone(phone)) {
     $("#validate-phone").html(
-      "Vui lòng điền số điện thoại bao gồm số và không có khoảng trắng"
+      "  Vui lòng điền số điện thoại bao gồm ít nhất một chữ số, không có khoảng trắng, chữ cái và kí tự đặc biệt"
     );
   }
   $("[name='phone'")
