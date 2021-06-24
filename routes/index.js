@@ -37,6 +37,15 @@ router.get("/course", (req, res, next) => {
 router.get("/courseDetail", (req, res, next) => {
   res.sendFile("./DetailCourse.html", { root: "./public" });
 });
+router.get("/city", (req, res, next) => {
+  axios("https://thongtindoanhnghiep.co/api/city")
+    .then((response) => {
+      res.status(200).send({ data: response.data.LtsItem })
+    })
+    .catch(() => {
+      res.status(400).send({ error: "Error data provinde", message: "Url data is wrong" });
+    });
+});
 router.get("/signin", (req, res, next) => {
   res.sendFile("./register.html", { root: "./public" });
 });
@@ -62,47 +71,47 @@ router.post(
     axios({
       method: "post",
       url:
-        "https://beta.lms.flexidata.vn/api/v1/accounts/1/users?pseudonym[password]=" +
+        "https://iom.lms.flexidata.vn/api/v1/accounts/1/users?pseudonym[password]=" +
         req.body.password +
         "&pseudonym[unique_id]=" +
         req.body.phone +
         "&user[name]=" +
         req.body.name +
-        "&destination=https://beta.lms.flexidata.vn/courses/1",
+        "&destination=https://iom.lms.flexidata.vn/courses/4",
       data: {},
       headers: {
         Authorization:
           "Bearer " +
-          "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+          "BL8NdQTWaV1zTln6NuCQw6XTO44wq00FJWKvGXWPz1ukHF34oThoBYJ9P7HgfWwz", //the token is a variable which holds the token
       },
     })
       .then((response) => {
         Promise.all([
           axios({
             method: "post",
-            url: `https://beta.lms.flexidata.vn/api/v1/courses/1/enrollments?enrollment[user_id]=${response.data.id}&enrollment[type]=StudentEnrollment&enrollment[enrollment_state]=active`,
+            url: `https://iom.lms.flexidata.vn/api/v1/courses/4/enrollments?enrollment[user_id]=${response.data.id}&enrollment[type]=StudentEnrollment&enrollment[enrollment_state]=active`,
             headers: {
               Authorization:
                 "Bearer " +
-                "CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+                "BL8NdQTWaV1zTln6NuCQw6XTO44wq00FJWKvGXWPz1ukHF34oThoBYJ9P7HgfWwz", //the token is a variable which holds the token
             },
           }),
           axios({
             method: "put",
-            url: `https://beta.lms.flexidata.vn/api/v1/users/${response.data.id}/custom_data`,
+            url: `https://iom.lms.flexidata.vn/api/v1/users/${response.data.id}/custom_data`,
             data: {
-              ns: "beta.lms.flexidata.vn",
+              ns: "iom.lms.flexidata.vn",
               data: {
-                job: req.body.jobs,
+                job: req.body.job,
                 gender: req.body.gender,
                 email: req.body.email,
-                provide: req.body.provide,
+                province: req.body.province,
                 hometown: req.body.hometown,
               },
             },
             headers: {
               Authorization:
-                "Bearer CBiKFo4ZHFEcued8yUc5uZlr2wgXoX7RdOxXsAfbPGlB5Rh7TTI4JX7dRVbEHy19", //the token is a variable which holds the token
+                "Bearer BL8NdQTWaV1zTln6NuCQw6XTO44wq00FJWKvGXWPz1ukHF34oThoBYJ9P7HgfWwz", //the token is a variable which holds the token
               "Content-Type": "application/json",
               Accept: "application/json",
             },
@@ -112,11 +121,10 @@ router.post(
             res.status(200).send({ redirect: response.data.destination });
           })
           .catch((error) => {
-            console.log(error.response);
+            res.status(400).send({ error: "custom data", message: "Please check your datas or your course"})
           });
       })
       .catch(function (error) {
-        console.log(error);
         res.status(400).send({
           error: "phone duplicate",
           message: "Số điện thoại đã tồn tại trong hệ thống",

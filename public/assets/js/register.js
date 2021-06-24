@@ -1,8 +1,20 @@
 $(".datepicker").each(function () {
   new Pikaday({ field: this });
 });
+// call api
+$.ajax({
+  type: "GET",
+  url: "/city",
+  success: (res) => {
+    Array.from(res.data).forEach((element) => {
+      $("[name='province']").append(`<option value='${element.SolrID}'>${element.Title}</option>`)
+      $("[name='hometown']").append(`<option value='${element.SolrID}'>${element.Title}</option>`)
+    });
+  }
+})
+// validate
 $("#hasAccount").on("click", () => {
-  window.parent.location.href = "https://beta.lms.flexidata.vn/login/canvas";
+  window.parent.location.href = "https://iom.lms.flexidata.vn/login/canvas";
 });
 $("[name='password-repeat']").on("change", () => {
   $("[name='password-repeat']")
@@ -51,19 +63,22 @@ $("#register-form").on("submit", (e) => {
   if (form.checkValidity()) {
     const phone = $("[name='phone']").val();
     const name = $("[name='name']").val();
+    const gender = $("[name='gender]'").children("option:selected").val();
+    const job = $("[name='job'").val();
+    const email = $("[name='email'").val();
+    const province = $("[name='province']").children("option:selected").val();
+    const hometown = $("[name='hometown']").children("option:selected").val();
     const password = $("[name='password']").val();
     const passwordConfirm = $("[name='password-repeat']").val();
     $.ajax({
       type: "POST",
-      data: { phone, name, password, passwordConfirm },
+      data: { phone, name, password, passwordConfirm, email, gender, job, province, hometown },
       url: "/signin", // or whatever
       dataType: "json",
       success: function (data) {
         window.parent.location.href = data.redirect;
       },
       error: (error) => {
-        console.log(error);
-        console.log(error.responseJSON.message);
         $("#validate-phone").html(error.responseJSON.message);
         $("[name='phone']").get(0).setCustomValidity(true);
       },
