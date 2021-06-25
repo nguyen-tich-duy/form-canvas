@@ -40,10 +40,12 @@ router.get("/courseDetail", (req, res, next) => {
 router.get("/city", (req, res, next) => {
   axios("https://thongtindoanhnghiep.co/api/city")
     .then((response) => {
-      res.status(200).send({ data: response.data.LtsItem })
+      res.status(200).send({ data: response.data.LtsItem });
     })
     .catch(() => {
-      res.status(400).send({ error: "Error data provinde", message: "Url data is wrong" });
+      res
+        .status(400)
+        .send({ error: "Error data provinde", message: "Url data is wrong" });
     });
 });
 router.get("/signin", (req, res, next) => {
@@ -81,8 +83,7 @@ router.post(
       data: {},
       headers: {
         Authorization:
-          "Bearer " +
-          "BL8NdQTWaV1zTln6NuCQw6XTO44wq00FJWKvGXWPz1ukHF34oThoBYJ9P7HgfWwz", //the token is a variable which holds the token
+          "Bearer qHlo9ItOjrVyJ4pcxv9jzNXbxSo2TwqBFM68xascCWm45IrrKVDNAdZmFUaaRX2f", //the token is a variable which holds the token
       },
     })
       .then((response) => {
@@ -92,8 +93,7 @@ router.post(
             url: `https://iom.lms.flexidata.vn/api/v1/courses/4/enrollments?enrollment[user_id]=${response.data.id}&enrollment[type]=StudentEnrollment&enrollment[enrollment_state]=active`,
             headers: {
               Authorization:
-                "Bearer " +
-                "BL8NdQTWaV1zTln6NuCQw6XTO44wq00FJWKvGXWPz1ukHF34oThoBYJ9P7HgfWwz", //the token is a variable which holds the token
+                "Bearer qHlo9ItOjrVyJ4pcxv9jzNXbxSo2TwqBFM68xascCWm45IrrKVDNAdZmFUaaRX2f", //the token is a variable which holds the token
             },
           }),
           axios({
@@ -111,7 +111,7 @@ router.post(
             },
             headers: {
               Authorization:
-                "Bearer BL8NdQTWaV1zTln6NuCQw6XTO44wq00FJWKvGXWPz1ukHF34oThoBYJ9P7HgfWwz", //the token is a variable which holds the token
+                "Bearer qHlo9ItOjrVyJ4pcxv9jzNXbxSo2TwqBFM68xascCWm45IrrKVDNAdZmFUaaRX2f", //the token is a variable which holds the token
               "Content-Type": "application/json",
               Accept: "application/json",
             },
@@ -121,7 +121,12 @@ router.post(
             res.status(200).send({ redirect: response.data.destination });
           })
           .catch((error) => {
-            res.status(400).send({ error: "custom data", message: "Please check your datas or your course"})
+            res
+              .status(400)
+              .send({
+                error: "custom data",
+                message: "Please check your datas or your course",
+              });
           });
       })
       .catch(function (error) {

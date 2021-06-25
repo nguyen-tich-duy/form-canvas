@@ -603,6 +603,8 @@ progress {
 .img-fluid {
     max-width: 100%;
     height: auto;
+    border-radius: 50%;
+    width: 15%;
 }
 
 .img-thumbnail {
@@ -5477,6 +5479,7 @@ fieldset:disabled .btn {
 
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0, 0, 0, 0.55);
+    font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
@@ -5490,6 +5493,7 @@ fieldset:disabled .btn {
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .nav-link.active {
     color: #0030A1;
+    font-weight: bold;
 }
 
 .navbar-light .navbar-toggler {
@@ -5599,8 +5603,6 @@ fieldset:disabled .btn {
 .card-body {
     padding: 1rem 1rem;
     background-color: #ffffff;
-    border-radius: 3px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.03);
 }
 
 .card-title {
@@ -9940,6 +9942,17 @@ fieldset:disabled .btn {
 
 .bg-theme {
     background-color: #F2F6FD !important;
+}
+
+.bg-parallax {
+    background-image: url(../img/gallery/background-header.png);
+    background-color: #F2F6FD !important;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bg-blue {
@@ -20729,6 +20742,16 @@ label {
 .background-overlay {
     background-image: linear-gradient(to top, white, rgba(255, 255, 255, 0));
     height: 100%;
+}
+
+.col-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pointer-cursor {
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 576px) {
