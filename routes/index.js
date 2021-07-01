@@ -126,6 +126,7 @@ router.post(
               .send({
                 error: "custom data",
                 message: "Please check your datas or your course",
+                systemerror: error,
               });
           });
       })
@@ -133,6 +134,7 @@ router.post(
         res.status(400).send({
           error: "phone duplicate",
           message: "Số điện thoại đã tồn tại trong hệ thống",
+          systemerror: error,
         });
       });
   }
