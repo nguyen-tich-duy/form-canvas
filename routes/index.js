@@ -1,7 +1,6 @@
 var express = require("express");
 var axios = require("axios");
 const { body, validationResult, checkSchema } = require("express-validator");
-var path = require("path");
 
 var router = express.Router();
 
@@ -17,13 +16,13 @@ const registrationSchema = {
   // email: {
   //   normalizeEmail: true,
   // },
-  // password: {
-  //   // isStrongPassword: {
-  //   //   minLength: 4,
-  //   // },
-  //   errorMessage: "Mật khẩu không được ít hơn 4 kí tự",
-  // },
-};
+  password: {
+    isLength: {
+      errorMessage: 'Mật khẩu phải tối thiểu là 8 kí tự',
+      options: { min: 8 },
+    },
+  },
+}
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Form canvas" });
@@ -55,7 +54,6 @@ router.post(
   "/signin",
   checkSchema(registrationSchema),
   body("passwordConfirm").custom((value, { req }) => {
-    console.log(value);
     if (value !== req.body.password) {
       throw new Error("Password confirmation does not match password");
     }
@@ -64,10 +62,9 @@ router.post(
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({
-        errors: "Password confirmation",
-        message: "Mật khẩu xác nhận không chính xác",
-      });
+      return res.status(400).json(
+         errors,
+      );
     }
     // Handle the request
     axios({
@@ -78,7 +75,7 @@ router.post(
         "&pseudonym[unique_id]=" +
         req.body.phone +
         "&user[name]=" +
-        req.body.name +
+        encodeURIComponent(req.body.name) +
         "&destination=https://iom.lms.flexidata.vn/courses/4",
       data: {},
       headers: {
@@ -131,7 +128,7 @@ router.post(
       })
       .catch(function (error) {
         res.status(400).send({
-          error: "phone duplicate",
+          error: "DuplicatePhone",
           message: "Số điện thoại đã tồn tại trong hệ thống",
         });
       });
